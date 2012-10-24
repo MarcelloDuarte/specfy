@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+file_put_contents('composer.json', '{
+    "require-dev": {
+         "phpspec/phpspec2": "*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr0": {
+            "spec": "",
+            "": "src"
+        }
+    }
+}');
+
+system("composer.phar install --dev");
